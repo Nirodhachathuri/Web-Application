@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="false"></constant>
+	<package name="abc" extends="struts-default" >
+	
+	
+	
+	<action name="registerAction" class="com.lithan.controller.RegisterAction">
+		<result name="success" type="redirect">homePageDataPopulation</result>
+		<result name="error">/errorRegister.jsp</result>
+		<result name="input">/register.jsp</result>
+	</action>
+	
+	<action name="adminLoginAction" class="com.lithan.controller.AdminLoginAction" method="execute">
+		<result name="success" type="redirect">homePageDataPopulation</result>
+		<result name="error">/login.jsp</result>
+		<result name="input">/login.jsp</result>
+	</action>
+	
+	<action name="loginAction" class="com.lithan.controller.LoginAction" method="execute">
+		<result name="success" type="redirect">homePageDataPopulation</result>
+		<result name="error">/login.jsp</result>
+		<result name="input">/login.jsp</result>
+	</action>
+	
+	
+	<action name="homePageDataPopulation" class="com.lithan.controller.HomePageDataPopulation">
+		<result name="success">/landing.jsp</result>
+	</action>
+		
+	<action name="deleteAction" class="com.lithan.controller.DeleteAction" method="execute">
+		<result name="success" type="redirect">homePageDataPopulation</result>
+		<result name="error">/login.jsp</result>
+		<result name="input">/login.jsp</result>
+	</action>
+	
+	<action name="updateDataAction" class="com.lithan.controller.UpdateDataAction" method="execute">
+		<result name="success">updateForm.jsp</result>
+		<result name="error">/login-error.jsp</result>
+	</action>
+	<action name="updateAction" class="com.lithan.controller.UpdateAction">
+		<result name="success" type="redirect">homePageDataPopulation</result>
+		<result name="error">/errorUpdate.jsp</result>
+	</action>
+	
+	<action name="searchAction" class="com.lithan.controller.SearchAction" method="execute">
+		<result name="success">/search.jsp</result>
+		<result name="error">/errorUpdate.jsp</result>
+	</action>
+	
+	</package>
+</struts> 
